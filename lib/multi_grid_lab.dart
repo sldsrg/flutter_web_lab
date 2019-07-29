@@ -41,7 +41,7 @@ class _MultiGridLabPageState extends State<MultiGridLabPage> {
               SizedBox(
                 height:
                     MediaQuery.of(context).size.height - 16.0 - kToolbarHeight,
-                width: MediaQuery.of(context).size.width / 2 - 8.0,
+                width: MediaQuery.of(context).size.width / 2 - 16.0,
                 child: CustomScrollView(
                   slivers: <Widget>[
                     SliverGrid.extent(
@@ -55,7 +55,18 @@ class _MultiGridLabPageState extends State<MultiGridLabPage> {
               SizedBox(
                 height:
                     MediaQuery.of(context).size.height - 16.0 - kToolbarHeight,
-                width: MediaQuery.of(context).size.width / 2 - 8.0,
+                width: 16.0,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 7.0),
+                  child: Container(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height:
+                    MediaQuery.of(context).size.height - 16.0 - kToolbarHeight,
+                width: MediaQuery.of(context).size.width / 2 - 16.0,
                 child: CustomScrollView(
                   slivers: <Widget>[
                     SliverGrid.extent(
