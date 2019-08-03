@@ -5,9 +5,11 @@ import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
 import 'next_lab.dart';
 import 'table_lab.dart';
+import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Listenable lab': (_) => ListenableLabPage(),
   'Markdown lab': (_) => MarkdownPage(),
   'Table lab': (_) => TableLabPage(),
   'Nested ListView lab': (_) => NestedListViewLabPage(),
