@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' as math;
 
 import 'package:flutter_web/material.dart';
 
@@ -24,7 +24,7 @@ class _MultiGridLabPageState extends State<MultiGridLabPage> {
   @override
   void initState() {
     super.initState();
-    var rnd = Random();
+    var rnd = math.Random();
     items = List<Item>.generate(32, (i) => Item('Item $i', rnd.nextBool()));
   }
 
@@ -42,14 +42,10 @@ class _MultiGridLabPageState extends State<MultiGridLabPage> {
                 height:
                     MediaQuery.of(context).size.height - 16.0 - kToolbarHeight,
                 width: MediaQuery.of(context).size.width / 2 - 16.0,
-                child: CustomScrollView(
-                  slivers: <Widget>[
-                    SliverGrid.extent(
-                      maxCrossAxisExtent: 150.0,
-                      childAspectRatio: 2.0,
-                      children: _buildList(false),
-                    )
-                  ],
+                child: GridView.extent(
+                  maxCrossAxisExtent: 150.0,
+                  childAspectRatio: 2.0,
+                  children: _buildList(false),
                 ),
               ),
               SizedBox(
@@ -67,14 +63,10 @@ class _MultiGridLabPageState extends State<MultiGridLabPage> {
                 height:
                     MediaQuery.of(context).size.height - 16.0 - kToolbarHeight,
                 width: MediaQuery.of(context).size.width / 2 - 16.0,
-                child: CustomScrollView(
-                  slivers: <Widget>[
-                    SliverGrid.extent(
-                      maxCrossAxisExtent: 150.0,
-                      childAspectRatio: 2.0,
-                      children: _buildList(true),
-                    )
-                  ],
+                child: GridView.extent(
+                  maxCrossAxisExtent: 150.0,
+                  childAspectRatio: 2.0,
+                  children: _buildList(true),
                 ),
               ),
             ],
