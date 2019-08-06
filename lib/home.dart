@@ -4,6 +4,7 @@ import 'package:web_lab/markdown_lab.dart';
 import 'animated_list_lab.dart';
 import 'animated_wrap_lab.dart';
 import 'basic_animation_lab.dart';
+import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
 import 'next_lab.dart';
@@ -12,6 +13,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Focus node  lab': (_) => FocusNodeLabPage(),
   'AnimatedWrap lab': (_) => AnimatedWrapLabPage(),
   'AnimatedList lab': (_) => AnimatedListLabPage(),
   'Basic animation lab': (_) => BasicAnimationLabPage(),
