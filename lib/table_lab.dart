@@ -11,6 +11,8 @@ class Item {
   Item(this.title, this.dismissed);
 }
 
+typedef Callback(Item item);
+
 class TableLabPage extends StatefulWidget {
   TableLabPage({
     Key key,
@@ -61,11 +63,13 @@ class _TableLabPageState extends State<TableLabPage> {
                       height: MediaQuery.of(context).size.height -
                           kToolbarHeight -
                           64.0,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        child: Wrap(
-                          children: buildList(true),
-                        ),
+                      child: Acceptor(
+                        children: buildList(false),
+                        callback: (item) {
+                          setState(() {
+                            item.dismissed = false;
+                          });
+                        },
                       ),
                     ), //buildSingleChildScrollView(),
                   ),
@@ -74,15 +78,30 @@ class _TableLabPageState extends State<TableLabPage> {
                       height: MediaQuery.of(context).size.height -
                           kToolbarHeight -
                           64.0,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        child: Wrap(
-                          children: buildList(false),
-                        ),
+                      child: Acceptor(
+                        children: buildList(null),
+                        callback: (item) {
+                          setState(() {
+                            item.dismissed = null;
+                          });
+                        },
                       ),
                     ), //buildSingleChildScrollView(),
                   ),
-                  TableCell(child: Container()),
+                  TableCell(
+                      child: SizedBox(
+                    height: MediaQuery.of(context).size.height -
+                        kToolbarHeight -
+                        64.0,
+                    child: Acceptor(
+                      children: buildList(true),
+                      callback: (item) {
+                        setState(() {
+                          item.dismissed = true;
+                        });
+                      },
+                    ),
+                  )),
                 ])
               ]),
             ],
@@ -93,7 +112,7 @@ class _TableLabPageState extends State<TableLabPage> {
         child: Icon(Icons.plus_one),
         onPressed: () {
           setState(() {
-            items.add(Item('Item ${items.length}', rnd.nextBool()));
+            items.add(Item('Item ${items.length}', null));
           });
         },
       ),
@@ -115,6 +134,7 @@ class _TableLabPageState extends State<TableLabPage> {
         .where((item) => item.dismissed == flag)
         .map(
           (item) => Draggable(
+                data: item,
                 affinity: Axis.horizontal,
                 feedback: Card(
                   child: Padding(
@@ -131,5 +151,67 @@ class _TableLabPageState extends State<TableLabPage> {
               ),
         )
         .toList();
+  }
+}
+
+class Acceptor extends StatefulWidget {
+  final List<Widget> children;
+  final Callback callback;
+
+  const Acceptor({
+    Key key,
+    this.children,
+    this.callback,
+  }) : super(key: key);
+
+  @override
+  _AcceptorState createState() => _AcceptorState();
+}
+
+class _AcceptorState extends State<Acceptor> {
+  bool _active;
+
+  @override
+  void initState() {
+    super.initState();
+    _active = false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return DragTarget(
+      builder: (
+        BuildContext context,
+        List candidateData,
+        List rejectedData,
+      ) {
+        return Container(
+          color: _active ? Colors.yellow[100] : null,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Wrap(
+              children: widget.children,
+            ),
+          ),
+        );
+      },
+      onWillAccept: (data) {
+        setState(() {
+          _active = true;
+        });
+        return true;
+      },
+      onLeave: (data) {
+        setState(() {
+          _active = false;
+        });
+      },
+      onAccept: (Item data) {
+        widget.callback(data);
+        setState(() {
+          _active = false;
+        });
+      },
+    );
   }
 }
