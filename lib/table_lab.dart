@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter_web/material.dart';
+import 'package:flutter_for_web/material.dart';
 
 var rnd = math.Random();
 
@@ -134,21 +134,21 @@ class _TableLabPageState extends State<TableLabPage> {
         .where((item) => item.dismissed == flag)
         .map(
           (item) => Draggable(
-                data: item,
-                affinity: Axis.horizontal,
-                feedback: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(item.title),
-                  ),
-                ),
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(item.title),
-                  ),
-                ),
+            data: item,
+            affinity: Axis.horizontal,
+            feedback: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(item.title),
               ),
+            ),
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(item.title),
+              ),
+            ),
+          ),
         )
         .toList();
   }

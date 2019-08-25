@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter_web/material.dart';
+import 'package:flutter_for_web/material.dart';
 
 class Item {
   final String title;
@@ -79,17 +79,17 @@ class _MultiGridLabPageState extends State<MultiGridLabPage> {
         .where((item) => item.dismissed == flag)
         .map(
           (item) => Dismissible(
-                child: Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(item.title),
-                  ),
-                ),
-                key: ValueKey(item.title),
-                onDismissed: (dir) => setState(() {
-                      item.dismissed = !item.dismissed;
-                    }),
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(item.title),
               ),
+            ),
+            key: ValueKey(item.title),
+            onDismissed: (dir) => setState(() {
+              item.dismissed = !item.dismissed;
+            }),
+          ),
         )
         .toList();
   }

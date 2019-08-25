@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter_for_web/material.dart';
 
 class BasicAnimationLabPage extends StatefulWidget {
   @override
@@ -85,10 +85,10 @@ class GrowTransition extends StatelessWidget {
       child: child,
       animation: animation,
       builder: (context, child) => Container(
-            width: animation.value,
-            height: animation.value,
-            child: child,
-          ),
+        width: animation.value,
+        height: animation.value,
+        child: child,
+      ),
     );
   }
 }

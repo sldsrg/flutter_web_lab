@@ -1,6 +1,8 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter_for_web/material.dart';
 import 'package:web_lab/markdown_lab.dart';
 
+import 'next_lab.dart';
+import 'animated_gif_lab.dart';
 import 'animated_list_lab.dart';
 import 'animated_wrap_lab.dart';
 import 'basic_animation_lab.dart';
@@ -8,12 +10,12 @@ import 'flex_lab.dart';
 import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
-import 'next_lab.dart';
 import 'table_lab.dart';
 import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Animated Gig lab': (_) => AnimatedGifLabPage(),
   'Flex lab': (_) => FlexLabPage(),
   'Focus node  lab': (_) => FocusNodeLabPage(),
   'AnimatedWrap lab': (_) => AnimatedWrapLabPage(),
@@ -34,13 +36,13 @@ class HomePage extends StatelessWidget {
         children: builders.entries
             .map(
               (entry) => ListTile(
-                    title: Text(entry.key),
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: entry.value),
-                      );
-                    },
-                  ),
+                title: Text(entry.key),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: entry.value),
+                  );
+                },
+              ),
             )
             .toList(),
       ),

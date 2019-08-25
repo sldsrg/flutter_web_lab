@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter_for_web/material.dart';
 
 class FlexLabPage extends StatelessWidget {
   @override

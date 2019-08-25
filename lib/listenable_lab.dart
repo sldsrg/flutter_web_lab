@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter_for_web/material.dart';
 
 class ListenableLabPage extends StatelessWidget {
   @override
@@ -36,10 +36,10 @@ class Trigger extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
       builder: (context, value, child) => Container(
-            width: 100,
-            height: 100,
-            color: value ? Colors.red : Colors.green,
-          ),
+        width: 100,
+        height: 100,
+        color: value ? Colors.red : Colors.green,
+      ),
       valueListenable: full,
     );
   }
