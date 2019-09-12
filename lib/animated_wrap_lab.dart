@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:flutter_for_web/material.dart';
+import 'package:flutter/material.dart';
 
 typedef AnimatedWrapItemBuilder = Widget Function(
     BuildContext context, int index, Animation<double> animation);

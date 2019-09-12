@@ -1,4 +1,4 @@
-import 'package:flutter_for_web/material.dart';
+import 'package:flutter/material.dart';
 
 class AnimatedGifLabPage extends StatelessWidget {
   @override
@@ -7,7 +7,7 @@ class AnimatedGifLabPage extends StatelessWidget {
       appBar: AppBar(),
       body: Center(
         child: Image.asset(
-          'double-ring-spinner.gif',
+          'assets/images/double-ring-spinner.gif',
           gaplessPlayback: true,
         ),
       ),

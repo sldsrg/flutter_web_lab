@@ -1,6 +1,6 @@
-import 'package:flutter_for_web/material.dart';
-import 'package:web_lab/markdown_lab.dart';
+import 'package:flutter/material.dart';
 
+import 'markdown_lab.dart';
 import 'next_lab.dart';
 import 'animated_gif_lab.dart';
 import 'animated_list_lab.dart';
@@ -15,7 +15,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
-  'Animated Gig lab': (_) => AnimatedGifLabPage(),
+  'Animated Gif lab': (_) => AnimatedGifLabPage(),
   'Flex lab': (_) => FlexLabPage(),
   'Focus node  lab': (_) => FocusNodeLabPage(),
   'AnimatedWrap lab': (_) => AnimatedWrapLabPage(),

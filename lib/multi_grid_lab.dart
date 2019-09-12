@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter_for_web/material.dart';
+import 'package:flutter/material.dart';
 
 class Item {
   final String title;
