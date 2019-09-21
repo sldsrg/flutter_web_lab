@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:universal_html/prefer_universal/html.dart';
+import 'package:universal_html/prefer_universal/html.dart' as html;
 
 class StorageLabPage extends StatefulWidget {
   @override
@@ -8,14 +8,14 @@ class StorageLabPage extends StatefulWidget {
 
 class _StorageLabPageState extends State<StorageLabPage> {
   final myController = TextEditingController();
-  Storage _localStorage;
+  html.Storage _localStorage;
 
   String test;
 
   @override
   void initState() {
     super.initState();
-    _localStorage = window.localStorage;
+    _localStorage = html.window.localStorage;
     myController.text = _localStorage['mypref'];
     myController.addListener(() {
       _localStorage['mypref'] = myController.text;
