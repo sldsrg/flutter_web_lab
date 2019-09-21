@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'assets_lab.dart';
 import 'markdown_lab.dart';
 import 'next_lab.dart';
 import 'animated_gif_lab.dart';
@@ -15,6 +16,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Assets lab': (_) => AssetsLabPage(),
   'Animated Gif lab': (_) => AnimatedGifLabPage(),
   'Flex lab': (_) => FlexLabPage(),
   'Focus node  lab': (_) => FocusNodeLabPage(),
