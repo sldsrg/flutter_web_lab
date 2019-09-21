@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'assets_lab.dart';
-import 'markdown_lab.dart';
+// import 'markdown_lab.dart';
+import 'http_lab.dart';
 import 'next_lab.dart';
 import 'animated_gif_lab.dart';
 import 'animated_list_lab.dart';
@@ -17,6 +18,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'HTTP lab': (_) => HttpLabPage(),
   'Storage lab': (_) => StorageLabPage(),
   'Assets lab': (_) => AssetsLabPage(),
   'Animated Gif lab': (_) => AnimatedGifLabPage(),
@@ -26,7 +28,7 @@ final builders = {
   'AnimatedList lab': (_) => AnimatedListLabPage(),
   'Basic animation lab': (_) => BasicAnimationLabPage(),
   'Listenable lab': (_) => ListenableLabPage(),
-  'Markdown lab': (_) => MarkdownPage(),
+  // 'Markdown lab': (_) => MarkdownPage(),
   'Table lab': (_) => TableLabPage(),
   'Nested ListView lab': (_) => NestedListViewLabPage(),
   'Multi GridView lab': (_) => MultiGridLabPage(),

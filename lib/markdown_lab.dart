@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+// import 'package:flutter_markdown/flutter_markdown.dart';
 
 class MarkdownPage extends StatefulWidget {
   @override
@@ -20,7 +20,7 @@ class _MarkdownPageState extends State<MarkdownPage> {
             return Text('Unable to load asset file');
           }
           if (snapshot.hasData) {
-            return Markdown(data: snapshot.data);
+            return Container(); // Markdown(data: snapshot.data);
           }
           return Center(child: CircularProgressIndicator());
         },

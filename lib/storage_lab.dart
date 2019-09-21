@@ -16,7 +16,6 @@ class _StorageLabPageState extends State<StorageLabPage> {
   void initState() {
     super.initState();
     _localStorage = window.localStorage;
-    print(_localStorage['mypref']);
     myController.text = _localStorage['mypref'];
     myController.addListener(() {
       _localStorage['mypref'] = myController.text;
