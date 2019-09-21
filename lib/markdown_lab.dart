@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class MarkdownPage extends StatefulWidget {
   @override
@@ -20,8 +20,7 @@ class _MarkdownPageState extends State<MarkdownPage> {
             return Text('Unable to load asset file');
           }
           if (snapshot.hasData) {
-            return Text(
-                'Waiting stable flutter for web'); //  Markdown(data: snapshot.data);
+            return Markdown(data: snapshot.data);
           }
           return Center(child: CircularProgressIndicator());
         },
@@ -31,7 +30,7 @@ class _MarkdownPageState extends State<MarkdownPage> {
 
   Future<String> _text(BuildContext context) async {
     final bundle = DefaultAssetBundle.of(context);
-    final text = await bundle.loadString('test.md');
+    final text = await bundle.loadString('assets/test.md');
     return text;
   }
 }
