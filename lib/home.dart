@@ -11,11 +11,13 @@ import 'flex_lab.dart';
 import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
+import 'storage_lab.dart';
 import 'table_lab.dart';
 import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Storage lab': (_) => StorageLabPage(),
   'Assets lab': (_) => AssetsLabPage(),
   'Animated Gif lab': (_) => AnimatedGifLabPage(),
   'Flex lab': (_) => FlexLabPage(),
