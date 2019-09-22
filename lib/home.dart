@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'assets_lab.dart';
 // import 'markdown_lab.dart';
 import 'http_lab.dart';
+import 'image_picker_lab.dart';
 import 'next_lab.dart';
 import 'animated_gif_lab.dart';
 import 'animated_list_lab.dart';
@@ -21,6 +22,7 @@ import 'listenable_lab.dart';
 final builders = {
   'Next lab': (_) => NextLabPage(),
   'HTTP lab': (_) => HttpLabPage(),
+  'Image picker lab': (_) => ImagePickerLabPage(),
   'Storage lab': (_) => StorageLabPage(),
   'Assets lab': (_) => AssetsLabPage(),
   'Animated Gif lab': (_) => AnimatedGifLabPage(),
