@@ -11,6 +11,7 @@ import 'animated_gif_lab.dart';
 import 'animated_list_lab.dart';
 import 'animated_wrap_lab.dart';
 import 'basic_animation_lab.dart';
+import 'firebase_lab.dart';
 import 'flex_lab.dart';
 import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
@@ -21,6 +22,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Firebase lab': (_) => FirebaseLabPage(),
   'HTTP lab': (_) => HttpLabPage(),
   'Image picker lab': (_) => ImagePickerLabPage(),
   'Storage lab': (_) => StorageLabPage(),
