@@ -3,7 +3,7 @@ import 'package:universal_html/prefer_universal/html.dart' as html;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'assets_lab.dart';
-// import 'markdown_lab.dart';
+import 'markdown_lab.dart';
 import 'http_lab.dart';
 import 'image_picker_lab.dart';
 import 'next_lab.dart';
@@ -34,7 +34,7 @@ final builders = {
   'AnimatedList lab': (_) => AnimatedListLabPage(),
   'Basic animation lab': (_) => BasicAnimationLabPage(),
   'Listenable lab': (_) => ListenableLabPage(),
-  // 'Markdown lab': (_) => MarkdownPage(),
+  'Markdown lab': (_) => MarkdownPage(),
   'Table lab': (_) => TableLabPage(),
   'Nested ListView lab': (_) => NestedListViewLabPage(),
   'Multi GridView lab': (_) => MultiGridLabPage(),
