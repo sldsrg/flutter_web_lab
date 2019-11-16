@@ -1,11 +1,12 @@
 import 'package:firebase/firebase.dart';
 import 'package:flutter/material.dart';
+import 'package:labs_web/api_keys.dart';
 
 import 'home.dart';
 
 void main() {
   initializeApp(
-      apiKey: "AIzaSyBI1DrMfUH0boPdlL_9XJ_Eh1SGV_mWaYQ",
+      apiKey: MY_KEY,
       authDomain: "example-7bd4e.firebaseapp.com",
       databaseURL: "https://example-7bd4e.firebaseio.com",
       projectId: "example-7bd4e",
