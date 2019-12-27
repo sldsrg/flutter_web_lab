@@ -54,7 +54,10 @@ class HomePage extends StatelessWidget {
         children: builders.entries
             .map(
               (entry) => ListTile(
-                title: Text(entry.key),
+                title: Text(
+                  entry.key,
+                  style: TextStyle(fontFamily: 'Raleway'),
+                ),
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: entry.value),
