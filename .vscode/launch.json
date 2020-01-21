@@ -6,9 +6,13 @@
   "configurations": [
     {
       "name": "Flutter",
-      "request": "launch",
       "type": "dart",
-      "args": ["-d", "chrome"]
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "-d",
+        "chrome"
+      ]
     }
   ]
 }
