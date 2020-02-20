@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'assets_lab.dart';
 import 'download_from_memory_lab.dart';
+import 'fonts_lab.dart';
 import 'markdown_lab.dart';
 import 'http_lab.dart';
 import 'image_picker_lab.dart';
@@ -24,11 +25,12 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Fonts lab': (_) => FontsLabPage(),
   'Download from memory': (_) => DownloadFromMemoryLabPage(),
   'Firebase lab': (_) => FirebaseLabPage(),
   'HTTP lab': (_) => HttpLabPage(),
   'Image picker lab': (_) => ImagePickerLabPage(),
-  'Shared prferences lab': (_) => SharedPreferencesLabPage(),
+  'Shared preferences lab': (_) => SharedPreferencesLabPage(),
   'Storage lab': (_) => StorageLabPage(),
   'Assets lab': (_) => AssetsLabPage(),
   'Animated Gif lab': (_) => AnimatedGifLabPage(),
@@ -58,10 +60,7 @@ class HomePage extends StatelessWidget {
         children: builders.entries
             .map(
               (entry) => ListTile(
-                title: Text(
-                  entry.key,
-                  style: TextStyle(fontFamily: 'Raleway'),
-                ),
+                title: Text(entry.key),
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: entry.value),

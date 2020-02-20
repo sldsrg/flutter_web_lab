@@ -54,6 +54,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: NovaCut
+      fonts:
+        - asset: fonts/NovaCut-Regular.ttf
   assets:
     - assets/images/
     - assets/test.md
