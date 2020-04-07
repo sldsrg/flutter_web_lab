@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "localeHint": "Current Locale: ",
+  "numOfMessages": "Number of messages: ",
+  "greeting": "Hello, world!",
+  "newMessages": "{newMessages, plural, zero {No new messages} one {{newMessages} new message} other {{newMessages} new messages}}"
+}

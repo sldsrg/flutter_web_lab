@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'assets_lab.dart';
 import 'download_from_memory_lab.dart';
 import 'fonts_lab.dart';
+import 'localizations_lab.dart';
 import 'markdown_lab.dart';
 import 'http_lab.dart';
 import 'image_picker_lab.dart';
@@ -25,6 +26,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'Localizations lab': (_) => LocalizationsLabPage(),
   'Fonts lab': (_) => FontsLabPage(),
   'Download from memory': (_) => DownloadFromMemoryLabPage(),
   'Firebase lab': (_) => FirebaseLabPage(),
