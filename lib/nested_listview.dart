@@ -41,7 +41,7 @@ class _TestWidgetState extends State<TestWidget> {
                 color: Colors.teal[100],
                 child: Text(
                   'lorem ipsum dolar sit amet lorem ipsum dolar sit amet lorem ipsum dolar sit amet lorem ipsum dolar sit amet ',
-                  style: Theme.of(context).textTheme.title,
+                  style: Theme.of(context).textTheme.headline6,
                 ),
               )
             : Container(),

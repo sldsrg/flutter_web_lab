@@ -3,13 +3,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesLabPage extends StatefulWidget {
   @override
-  _SharedPreferencesLabPageState createState() =>
-      _SharedPreferencesLabPageState();
+  _SharedPreferencesLabPageState createState() => _SharedPreferencesLabPageState();
 }
 
 class _SharedPreferencesLabPageState extends State<SharedPreferencesLabPage> {
   int counter;
-  SharedPreferences prefs;
+  SharedPreferences preferences;
 
   @override
   void initState() {
@@ -32,9 +31,9 @@ class _SharedPreferencesLabPageState extends State<SharedPreferencesLabPage> {
   }
 
   _initCounter() async {
-    prefs = await SharedPreferences.getInstance();
+    preferences = await SharedPreferences.getInstance();
     setState(() {
-      counter = (prefs.getInt('counter') ?? 0);
+      counter = (preferences.getInt('counter') ?? 0);
     });
   }
 
@@ -42,6 +41,6 @@ class _SharedPreferencesLabPageState extends State<SharedPreferencesLabPage> {
     setState(() {
       counter++;
     });
-    await prefs.setInt('counter', counter);
+    await preferences.setInt('counter', counter);
   }
 }

@@ -18,7 +18,7 @@ import 'flex_lab.dart';
 import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
-import 'sharedprefs_lab.dart';
+import 'shared_preferences_lab.dart';
 import 'storage_lab.dart';
 import 'table_lab.dart';
 import 'listenable_lab.dart';
