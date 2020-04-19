@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:universal_html/prefer_universal/html.dart' as html;
+import 'package:universal_html/html.dart' as html;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'assets_lab.dart';
@@ -20,6 +20,7 @@ import 'flex_lab.dart';
 import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
+import 'paypal_buttons.dart';
 import 'permissions_lab.dart';
 import 'shared_preferences_lab.dart';
 import 'storage_lab.dart';
@@ -28,34 +29,38 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
-  'Focus carousel lab': (_) => FocusCarouselLabPage(),
-  'Permissions lab': (_) => PermissionsLabPage(),
-  'Localizations lab': (_) => LocalizationsLabPage(),
-  'Fonts lab': (_) => FontsLabPage(),
-  'Download from memory': (_) => DownloadFromMemoryLabPage(),
-  'Firebase lab': (_) => FirebaseLabPage(),
-  'HTTP lab': (_) => HttpLabPage(),
-  'Image picker lab': (_) => ImagePickerLabPage(),
-  'Shared preferences lab': (_) => SharedPreferencesLabPage(),
-  'Storage lab': (_) => StorageLabPage(),
+  'AnimatedList lab': (_) => AnimatedListLabPage(),
+  'AnimatedWrap lab': (_) => AnimatedWrapLabPage(),
   'Assets lab': (_) => AssetsLabPage(),
   'Animated Gif lab': (_) => AnimatedGifLabPage(),
-  'Flex lab': (_) => FlexLabPage(),
-  'Focus node  lab': (_) => FocusNodeLabPage(),
-  'AnimatedWrap lab': (_) => AnimatedWrapLabPage(),
-  'AnimatedList lab': (_) => AnimatedListLabPage(),
   'Basic animation lab': (_) => BasicAnimationLabPage(),
+  'Download from memory': (_) => DownloadFromMemoryLabPage(),
+  'Firebase lab': (_) => FirebaseLabPage(),
+  'Flex lab': (_) => FlexLabPage(),
+  'Focus carousel lab': (_) => FocusCarouselLabPage(),
+  'Focus node  lab': (_) => FocusNodeLabPage(),
+  'Fonts lab': (_) => FontsLabPage(),
+  'HTTP lab': (_) => HttpLabPage(),
+  'Image picker lab': (_) => ImagePickerLabPage(),
   'Listenable lab': (_) => ListenableLabPage(),
+  'Localizations lab': (_) => LocalizationsLabPage(),
   'Markdown lab': (_) => MarkdownPage(),
-  'Table lab': (_) => TableLabPage(),
-  'Nested ListView lab': (_) => NestedListViewLabPage(),
   'Multi GridView lab': (_) => MultiGridLabPage(),
+  'Nested ListView lab': (_) => NestedListViewLabPage(),
+  'PayPal integration lab': (_) => PayPalLabPage(),
+  'Permissions lab': (_) => PermissionsLabPage(),
+  'Shared preferences lab': (_) => SharedPreferencesLabPage(),
+  'Storage lab': (_) => StorageLabPage(),
+  'Table lab': (_) => TableLabPage(),
 };
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter for web labs'),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(FontAwesomeIcons.stackOverflow),
         onPressed: () {
