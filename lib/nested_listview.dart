@@ -21,9 +21,10 @@ class _TestWidgetState extends State<TestWidget> {
 
   @override
   void initState() {
+    super.initState();
+
     _scrollController.addListener(onScroll);
     _showIntro = true;
-    super.initState();
   }
 
   @override

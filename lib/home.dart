@@ -3,6 +3,7 @@ import 'package:universal_html/html.dart' as html;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'assets_lab.dart';
+import 'bpmn_lab.dart';
 import 'download_from_memory_lab.dart';
 import 'focus_carousel_lab.dart';
 import 'fonts_lab.dart';
@@ -34,6 +35,7 @@ final builders = {
   'Assets lab': (_) => AssetsLabPage(),
   'Animated Gif lab': (_) => AnimatedGifLabPage(),
   'Basic animation lab': (_) => BasicAnimationLabPage(),
+  'Bpmn viewer lab': (_) => BpmnLabPage(),
   'Download from memory': (_) => DownloadFromMemoryLabPage(),
   'Firebase lab': (_) => FirebaseLabPage(),
   'Flex lab': (_) => FlexLabPage(),

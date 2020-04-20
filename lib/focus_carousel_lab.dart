@@ -12,6 +12,8 @@ class _FocusCarouselLabPageState extends State<FocusCarouselLabPage> {
 
   @override
   void initState() {
+    super.initState();
+
     controllers['width'] = TextEditingController();
     controllers['height'] = TextEditingController();
     controllers['amount'] = TextEditingController();
@@ -23,11 +25,11 @@ class _FocusCarouselLabPageState extends State<FocusCarouselLabPage> {
       node.addListener(() {
         if (node.hasFocus) {
           final text = ctl.text;
-          ctl.selection = TextSelection(baseOffset: 0, extentOffset: text.length);
+          ctl.selection =
+              TextSelection(baseOffset: 0, extentOffset: text.length);
         }
       });
     });
-    super.initState();
   }
 
   @override
@@ -97,7 +99,8 @@ class _FocusCarouselLabPageState extends State<FocusCarouselLabPage> {
                             controller: controllers['width'],
                             decoration: InputDecoration(hintText: 'width'),
                             focusNode: focusNodes['width'],
-                            onEditingComplete: focusNodes['height'].requestFocus,
+                            onEditingComplete:
+                                focusNodes['height'].requestFocus,
                           ))),
                   TableCell(
                       child: Padding(
@@ -106,7 +109,8 @@ class _FocusCarouselLabPageState extends State<FocusCarouselLabPage> {
                             controller: controllers['height'],
                             decoration: InputDecoration(hintText: 'height'),
                             focusNode: focusNodes['height'],
-                            onEditingComplete: focusNodes['amount'].requestFocus,
+                            onEditingComplete:
+                                focusNodes['amount'].requestFocus,
                           ))),
                   TableCell(
                       child: Padding(

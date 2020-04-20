@@ -10,8 +10,9 @@ class _FocusNodeLabPageState extends State<FocusNodeLabPage> {
 
   @override
   void initState() {
-    myFocusNode = FocusNode();
     super.initState();
+
+    myFocusNode = FocusNode();
   }
 
   @override

@@ -29,6 +29,8 @@ class _PayPalState extends State<PayPalWidget> {
 
   @override
   void initState() {
+    super.initState();
+
     _element = html.IFrameElement()
       ..width = "200px"
       ..height = "200px"
@@ -48,8 +50,6 @@ class _PayPalState extends State<PayPalWidget> {
       'PayPalButtons',
       (int viewId) => _element,
     );
-
-    super.initState();
   }
 
   @override
