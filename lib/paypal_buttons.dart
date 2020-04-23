@@ -1,4 +1,5 @@
 import 'dart:ui' as ui;
+import 'dart:js' as js;
 import 'package:universal_html/html.dart' as html;
 import 'package:flutter/material.dart';
 
@@ -10,10 +11,12 @@ class PayPalLabPage extends StatelessWidget {
         title: Text('PayPal integration'),
       ),
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-          Noise(),
-          PayPalWidget(),
-        ]),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Noise(),
+              PayPalWidget(),
+            ]),
       ),
     );
   }
@@ -40,10 +43,34 @@ class _PayPalState extends State<PayPalWidget> {
         <html>
           <body>
             <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
-            <script>paypal.Buttons().render('body');</script>
+            <script>
+              paypal.Buttons(
+                {
+                  createOrder: function(data, actions) {
+                    return actions.order.create({
+                      purchase_units: parent.purchase_units
+                    });
+                  },
+                  onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                      parent.flutter_feedback('Transaction completed by ' + details.payer.name.given_name);
+                    });
+                  }
+                }
+              ).render('body');
+            </script>
           </body>
         </html>
         """;
+
+    js.context["purchase_units"] = js.JsObject.jsify([
+      {
+        'amount': {'value': '0.02'}
+      }
+    ]);
+    js.context["flutter_feedback"] = (msg) {
+      Scaffold.of(context).showSnackBar(SnackBar(content: Text(msg)));
+    };
 
     // ignore:undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory(
@@ -71,7 +98,8 @@ class Noise extends StatelessWidget {
         onPressed: () {
           Scaffold.of(context).showSnackBar(
             SnackBar(
-              content: Text("PayPal buttons will be re-created when I disappear"),
+              content:
+                  Text("PayPal buttons will be re-created when I disappear"),
             ),
           );
         },
