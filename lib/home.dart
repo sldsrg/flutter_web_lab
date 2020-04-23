@@ -23,6 +23,7 @@ import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
 import 'paypal_buttons.dart';
+import 'pdf_lab.dart';
 import 'permissions_lab.dart';
 import 'shared_preferences_lab.dart';
 import 'storage_lab.dart';
@@ -52,6 +53,7 @@ final builders = {
   'Multi GridView lab': (_) => MultiGridLabPage(),
   'Nested ListView lab': (_) => NestedListViewLabPage(),
   'PayPal integration lab': (_) => PayPalLabPage(),
+  'Pdf lab': (_) => PdfLabPage(),
   'Permissions lab': (_) => PermissionsLabPage(),
   'Shared preferences lab': (_) => SharedPreferencesLabPage(),
   'Storage lab': (_) => StorageLabPage(),
