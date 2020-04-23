@@ -11,6 +11,7 @@ import 'localizations_lab.dart';
 import 'markdown_lab.dart';
 import 'http_lab.dart';
 import 'image_picker_lab.dart';
+import 'js_lab.dart';
 import 'next_lab.dart';
 import 'animated_gif_lab.dart';
 import 'animated_list_lab.dart';
@@ -44,6 +45,7 @@ final builders = {
   'Fonts lab': (_) => FontsLabPage(),
   'HTTP lab': (_) => HttpLabPage(),
   'Image picker lab': (_) => ImagePickerLabPage(),
+  'JavaScript interop lab': (_) => JavaScriptLabPage(),
   'Listenable lab': (_) => ListenableLabPage(),
   'Localizations lab': (_) => LocalizationsLabPage(),
   'Markdown lab': (_) => MarkdownPage(),
