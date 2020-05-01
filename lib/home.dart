@@ -22,6 +22,7 @@ import 'flex_lab.dart';
 import 'focus_node_lab.dart';
 import 'multi_grid_lab.dart';
 import 'nested_listview.dart';
+import 'page_view_lab.dart';
 import 'paypal_buttons.dart';
 import 'pdf_lab.dart';
 import 'permissions_lab.dart';
@@ -32,6 +33,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
+  'PageView Lab': (_) => PageViewLab(),
   'AnimatedList lab': (_) => AnimatedListLabPage(),
   'AnimatedWrap lab': (_) => AnimatedWrapLabPage(),
   'Assets lab': (_) => AssetsLabPage(),
