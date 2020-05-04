@@ -7,6 +7,7 @@ import 'bpmn_lab.dart';
 import 'download_from_memory_lab.dart';
 import 'focus_carousel_lab.dart';
 import 'fonts_lab.dart';
+import 'hive_lab.dart';
 import 'localizations_lab.dart';
 import 'markdown_lab.dart';
 import 'http_lab.dart';
@@ -33,7 +34,7 @@ import 'listenable_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
-  'PageView Lab': (_) => PageViewLab(),
+  'Hive lab': (_) => HiveLabPage(),
   'AnimatedList lab': (_) => AnimatedListLabPage(),
   'AnimatedWrap lab': (_) => AnimatedWrapLabPage(),
   'Assets lab': (_) => AssetsLabPage(),
@@ -54,6 +55,7 @@ final builders = {
   'Markdown lab': (_) => MarkdownPage(),
   'Multi GridView lab': (_) => MultiGridLabPage(),
   'Nested ListView lab': (_) => NestedListViewLabPage(),
+  'PageView Lab': (_) => PageViewLab(),
   'PayPal integration lab': (_) => PayPalLabPage(),
   'Pdf lab': (_) => PdfLabPage(),
   'Permissions lab': (_) => PermissionsLabPage(),

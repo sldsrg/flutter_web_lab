@@ -1,10 +1,16 @@
 import 'package:firebase/firebase.dart' as firebase;
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:labs_web/api_keys.dart';
 
 import 'home.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox<String>('favorites');
+
+  // TODO: migrate to cloud_firestore package
   firebase.initializeApp(
       apiKey: MY_KEY,
       authDomain: "example-7bd4e.firebaseapp.com",
