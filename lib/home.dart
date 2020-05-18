@@ -7,6 +7,7 @@ import 'bpmn_lab.dart';
 import 'download_from_memory_lab.dart';
 import 'focus_carousel_lab.dart';
 import 'fonts_lab.dart';
+import 'google_sign_in_lab.dart';
 import 'hive_lab.dart';
 import 'localizations_lab.dart';
 import 'markdown_lab.dart';
@@ -47,6 +48,7 @@ final builders = {
   'Focus carousel lab': (_) => FocusCarouselLabPage(),
   'Focus node  lab': (_) => FocusNodeLabPage(),
   'Fonts lab': (_) => FontsLabPage(),
+  'Google Sign-In lab': (_) => GoogleSignInLabPage(),
   'HTTP lab': (_) => HttpLabPage(),
   'Image picker lab': (_) => ImagePickerLabPage(),
   'JavaScript interop lab': (_) => JavaScriptLabPage(),

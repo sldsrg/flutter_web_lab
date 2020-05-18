@@ -5,13 +5,15 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Flutter",
+      "name": "chrome",
       "type": "dart",
       "request": "launch",
       "program": "lib/main.dart",
       "args": [
         "-d",
-        "chrome"
+        "chrome",
+        "--web-port",
+        "8989"
       ]
     }
   ]
