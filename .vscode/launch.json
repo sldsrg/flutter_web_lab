@@ -12,6 +12,8 @@
       "args": [
         "-d",
         "chrome",
+        "--web-hostname",
+        "0",
         "--web-port",
         "8989"
       ]

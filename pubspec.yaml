@@ -70,7 +70,7 @@ flutter:
       fonts:
         - asset: fonts/NovaCut-Regular.ttf
   assets:
+    - assets/
     - assets/images/
-    - assets/test.md
 flutter_intl:
   enabled: true
