@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-class MarkdownPage extends StatefulWidget {
-  @override
-  _MarkdownPageState createState() => _MarkdownPageState();
-}
-
-class _MarkdownPageState extends State<MarkdownPage> {
+class MarkdownPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -11,6 +11,7 @@ import 'google_sign_in_lab.dart';
 import 'hive_lab.dart';
 import 'localizations_lab.dart';
 import 'markdown_lab.dart';
+import 'markdown_view_lab.dart';
 import 'http_lab.dart';
 import 'image_picker_lab.dart';
 import 'js_lab.dart';
@@ -55,6 +56,7 @@ final builders = {
   'Listenable lab': (_) => ListenableLabPage(),
   'Localizations lab': (_) => LocalizationsLabPage(),
   'Markdown lab': (_) => MarkdownPage(),
+  'Markdown View lab': (_) => MarkdownViewPage(),
   'Multi GridView lab': (_) => MultiGridLabPage(),
   'Nested ListView lab': (_) => NestedListViewLabPage(),
   'PageView Lab': (_) => PageViewLab(),
@@ -86,7 +88,8 @@ class HomePage extends StatelessWidget {
                 title: Text(entry.key),
                 onTap: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: entry.value),
+                    MaterialPageRoute(
+                        builder: entry.value, settings: RouteSettings(name: entry.key)),
                   );
                 },
               ),

@@ -37,3 +37,31 @@ The `Img` tag only supports the following image locations:
 
 - From image locations referring to bundled assets: Use an asset name prefixed by `resource:`.
   like `resource:assets/image.png`.
+
+|       | **Wh Questions** |
+|-------| ---  |
+| where | **do** I **play** ? |
+| what | **do** you **play** ? |
+| why | **do**es he **play** ? |
+| who | **do**es she **play** ? |
+| when | **do** we **play ?** |
+| how | **do** they **play** ? |
+
+## Numerated list
+
+1. Item 1
+1. Item 2
+
+> Some text between list items
+
+3. Item 3
+   1. Item 3.1
+   1. Item 3.2
+3. Item 4
+
+## Blockquotes
+
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.

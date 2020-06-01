@@ -36,7 +36,7 @@ class _BpmnLabPageState extends State<BpmnLabPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text('BPMN Viewer lab')),
       body: Center(child: HtmlElementView(key: UniqueKey(), viewType: "bpmn-view")),
     );
   }
