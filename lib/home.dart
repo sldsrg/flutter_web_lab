@@ -33,6 +33,7 @@ import 'shared_preferences_lab.dart';
 import 'storage_lab.dart';
 import 'table_lab.dart';
 import 'listenable_lab.dart';
+import 'iframe_lab.dart';
 
 final builders = {
   'Next lab': (_) => NextLabPage(),
@@ -51,6 +52,7 @@ final builders = {
   'Fonts lab': (_) => FontsLabPage(),
   'Google Sign-In lab': (_) => GoogleSignInLabPage(),
   'HTTP lab': (_) => HttpLabPage(),
+  'IFrame lab': (_) => IFrameLabPage(),
   'Image picker lab': (_) => ImagePickerLabPage(),
   'JavaScript interop lab': (_) => JavaScriptLabPage(),
   'Listenable lab': (_) => ListenableLabPage(),
