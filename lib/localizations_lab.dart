@@ -12,6 +12,16 @@ class _LocalizationsLabPageState extends State<LocalizationsLabPage> {
   int _numOfMessages = 0;
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setState(() {
+        _locale = Locale(Localizations.localeOf(context).languageCode);
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Localizations.override(
       context: context,
