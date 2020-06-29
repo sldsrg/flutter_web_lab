@@ -33,6 +33,7 @@ import 'storage_lab.dart';
 import 'table_lab.dart';
 import 'listenable_lab.dart';
 import 'iframe_lab.dart';
+import 'webview_lab.dart';
 
 class RouteDef {
   final String path;
@@ -44,6 +45,7 @@ class RouteDef {
 
 final routes = <RouteDef>[
   RouteDef('/next', 'Next lab', (_) => NextLabPage()),
+  RouteDef('/webview', 'Webview lab', (_) => WebviewLabPage()),
   RouteDef('/hive', 'Hive lab', (_) => HiveLabPage()),
   RouteDef('/animated-list', 'AnimatedList lab', (_) => AnimatedListLabPage()),
   RouteDef('/animated-wrap', 'AnimatedWrap lab', (_) => AnimatedWrapLabPage()),
