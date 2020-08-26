@@ -16,24 +16,17 @@ class _PageViewLabState extends State<PageViewLab> {
       ),
       body: Container(
         constraints: BoxConstraints.expand(),
-        child: Listener(
-          // onPointerSignal: print,
-          // onPointerMove: (event) => print('move $event'),
-          // onPointerCancel: (event) => print('canceled $event'),
-          child: PageView.builder(
-            itemCount: 12,
-            scrollDirection: Axis.vertical,
-            pageSnapping: false,
-            // physics: NeverScrollableScrollPhysics(),
-            physics: MyPageScrollPhysics(),
-            itemBuilder: (context, index) {
-              return Container(
-                color:
-                    Color((math.Random().nextDouble() * 0xFFFFFF).toInt() << 0)
-                        .withOpacity(1.0),
-              );
-            },
-          ),
+        child: PageView.builder(
+          itemCount: Colors.primaries.length,
+          scrollDirection: Axis.vertical,
+          pageSnapping: false,
+          physics: MyPageScrollPhysics(),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(color: Colors.primaries[index]),
+            );
+          },
         ),
       ),
     );
@@ -60,7 +53,10 @@ class MyPageScrollPhysics extends ScrollPhysics {
   }
 
   double _getTargetPixels(
-      ScrollMetrics position, Tolerance tolerance, double velocity) {
+    ScrollMetrics position,
+    Tolerance tolerance,
+    double velocity,
+  ) {
     double page = _getPage(position);
     if (velocity < -tolerance.velocity)
       page -= 0.5;
@@ -91,8 +87,7 @@ class MyPageScrollPhysics extends ScrollPhysics {
   bool get allowImplicitScrolling => false;
 }
 
-class _PagePosition extends ScrollPositionWithSingleContext
-    implements PageMetrics {
+class _PagePosition extends ScrollPositionWithSingleContext implements PageMetrics {
   _PagePosition({
     ScrollPhysics physics,
     ScrollContext context,
@@ -133,8 +128,7 @@ class _PagePosition extends ScrollPositionWithSingleContext
   //
   // The value is 0 if viewportFraction is less than or equal to 1, larger than 0
   // otherwise.
-  double get _initialPageOffset =>
-      math.max(0, viewportDimension * (viewportFraction - 1) / 2);
+  double get _initialPageOffset => math.max(0, viewportDimension * (viewportFraction - 1) / 2);
 
   double getPageFromPixels(double pixels, double viewportDimension) {
     final double actual = math.max(0.0, pixels - _initialPageOffset) /
@@ -159,21 +153,20 @@ class _PagePosition extends ScrollPositionWithSingleContext
     return pixels == null
         ? null
         : getPageFromPixels(
-            pixels.clamp(minScrollExtent, maxScrollExtent) as double,
-            viewportDimension);
+            pixels.clamp(minScrollExtent, maxScrollExtent) as double, viewportDimension);
   }
 
   @override
   void saveScrollOffset() {
-    PageStorage.of(context.storageContext)?.writeState(
-        context.storageContext, getPageFromPixels(pixels, viewportDimension));
+    PageStorage.of(context.storageContext)
+        ?.writeState(context.storageContext, getPageFromPixels(pixels, viewportDimension));
   }
 
   @override
   void restoreScrollOffset() {
     if (pixels == null) {
-      final double value = PageStorage.of(context.storageContext)
-          ?.readState(context.storageContext) as double;
+      final double value =
+          PageStorage.of(context.storageContext)?.readState(context.storageContext) as double;
       if (value != null) _pageToUseOnStartup = value;
     }
   }

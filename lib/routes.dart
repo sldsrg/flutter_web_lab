@@ -8,6 +8,7 @@ import 'focus_carousel_lab.dart';
 import 'fonts_lab.dart';
 import 'google_sign_in_lab.dart';
 import 'hive_lab.dart';
+import 'href_lab.dart';
 import 'localizations_lab.dart';
 import 'markdown_lab.dart';
 import 'markdown_view_lab.dart';
@@ -60,6 +61,7 @@ final routes = <RouteDef>[
   RouteDef('/focus-node', 'Focus node lab', (_) => FocusNodeLabPage()),
   RouteDef('/fonts', 'Fonts lab', (_) => FontsLabPage()),
   RouteDef('/google-sign-in', 'Google Sign-In lab', (_) => GoogleSignInLabPage()),
+  RouteDef('/href', 'Href lab', (_) => HrefLabPage()),
   RouteDef('/http', 'HTTP lab', (_) => HttpLabPage()),
   RouteDef('/iframe', 'IFrame lab', (_) => IFrameLabPage()),
   RouteDef('/image-picker', 'Image picker lab', (_) => ImagePickerLabPage()),
@@ -84,8 +86,6 @@ class RouteConfiguration {
     for (var def in routes) {
       final regExpPattern = RegExp(def.path);
       if (regExpPattern.hasMatch(settings.name)) {
-        final firstMatch = regExpPattern.firstMatch(settings.name);
-        final match = (firstMatch.groupCount == 1) ? firstMatch.group(1) : null;
         return MaterialPageRoute<void>(
           builder: (context) => def.builder(context),
           settings: settings,
