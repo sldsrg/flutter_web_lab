@@ -76,7 +76,7 @@ class _LocalizationsLabPageState extends State<LocalizationsLabPage> {
                         textAlign: TextAlign.center,
                         onChanged: (String value) {
                           setState(() {
-                            _numOfMessages = int.parse(value);
+                            _numOfMessages = int.tryParse(value) ?? 0;
                           });
                         },
                       ),

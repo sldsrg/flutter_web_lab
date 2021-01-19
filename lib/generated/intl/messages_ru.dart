@@ -19,7 +19,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru';
 
-  static m0(newMessages) => "${Intl.plural(newMessages, zero: 'Нет новых сообщений', one: '${newMessages} новое сообщение', few: '${newMessages} новых сообщения', other: '${newMessages} новых сообщений')}";
+  static m0(count) => "${Intl.plural(count, zero: 'Нет новых сообщений', one: '${count} новое сообщение', few: '${count} новых сообщения', other: '${count} новых сообщений')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {

@@ -15,7 +15,7 @@ class _ImagePickerLabPageState extends State<ImagePickerLabPage> {
   Uint8List data;
   html.FormElement form;
 
-  pickImage() {
+  void pickImage() {
     final input = html.document.createElement('input') as html.InputElement
       ..type = 'file'
       ..accept = 'image/*'
@@ -30,9 +30,8 @@ class _ImagePickerLabPageState extends State<ImagePickerLabPage> {
             }));
         reader.onLoad.first.then((res) {
           final encoded = reader.result as String;
-          // remove data:image/*;base64 preambule
-          final stripped =
-              encoded.replaceFirst(RegExp(r'data:image/[^;]+;base64,'), '');
+          // remove data:image/*;base64 preamble
+          final stripped = encoded.replaceFirst(RegExp(r'data:image/[^;]+;base64,'), '');
 
           setState(() {
             name = target.files[0].name;
@@ -44,7 +43,7 @@ class _ImagePickerLabPageState extends State<ImagePickerLabPage> {
 
     form = html.document.createElement('form') as html.FormElement
       ..method = 'POST'
-      ..enctype = "multipart/form-data"
+      ..enctype = 'multipart/form-data'
       ..action = '/profile'
       ..children.add(input);
     html.document.body.children.add(form);
@@ -63,14 +62,14 @@ class _ImagePickerLabPageState extends State<ImagePickerLabPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Pick'),
                 onPressed: pickImage,
               ),
               SizedBox(
                 width: 16,
               ),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Upload'),
                 onPressed: () {
                   form?.submit();
@@ -82,7 +81,9 @@ class _ImagePickerLabPageState extends State<ImagePickerLabPage> {
             child: Center(
               child: error != null
                   ? Text(error)
-                  : data != null ? Image.memory(data) : Text('No data...'),
+                  : data != null
+                      ? Image.memory(data)
+                      : Text('No data...'),
             ),
           ),
         ],

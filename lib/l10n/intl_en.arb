@@ -3,5 +3,13 @@
   "localeHint": "Current Locale: ",
   "numOfMessages": "Number of messages: ",
   "greeting": "Hello, world!",
-  "newMessages": "{newMessages, plural, zero {No new messages} one {{newMessages} new message} other {{newMessages} new messages}}"
+  "newMessages": "{count, plural, zero {No new messages} one {{count} new message} other {{count} new messages}}",
+  "@newMessages": {
+    "description": "A plural Message",
+    "placeholders": {
+      "count": {
+        "type": "text"
+      }
+    }
+  }
 }

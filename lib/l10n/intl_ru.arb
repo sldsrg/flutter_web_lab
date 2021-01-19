@@ -3,5 +3,13 @@
   "localeHint": "Язык интерфейса: ",
   "numOfMessages": "Количество новых сообщений: ",
   "greeting": "Привет, мир!",
-  "newMessages": "{newMessages, plural, zero {Нет новых сообщений} one {{newMessages} новое сообщение} few {{newMessages} новых сообщения} other {{newMessages} новых сообщений}}"
+  "newMessages": "{count, plural, zero {Нет новых сообщений} one {{count} новое сообщение} few {{count} новых сообщения} other {{count} новых сообщений}}",
+  "@newMessages": {
+    "description": "A plural Message",
+    "placeholders": {
+      "count": {
+        "type": "text"
+      }
+    }
+  }
 }
